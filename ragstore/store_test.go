@@ -141,7 +141,7 @@ func TestStore_LexicalSearch(t *testing.T) {
 		Kind:        "kind/b",
 		ContentType: "text/plain",
 		Attributes:  map[string]string{"author": "other"},
-		Body:        "another test document about starflow",
+		Body:        "another test document about starkit",
 		Timestamp:   baseTime.Add(-1 * time.Hour), // Newer than doc1
 	}
 	_, err := store.UpsertDocument(ctx, doc1)
@@ -172,7 +172,7 @@ func TestStore_LexicalSearch(t *testing.T) {
 	})
 
 	t.Run("search with attribute filter", func(t *testing.T) {
-		results, err := store.LexicalSearch(ctx, Query{KeywordQuery: "starflow", Filters: map[string]string{"author": "other"}, Limit: 10})
+		results, err := store.LexicalSearch(ctx, Query{KeywordQuery: "starkit", Filters: map[string]string{"author": "other"}, Limit: 10})
 		require.NoError(t, err)
 		assert.Len(t, results, 1)
 		assert.Equal(t, "doc2", results[0].DocumentID)
@@ -256,7 +256,7 @@ func TestStore_LexicalSearch_MultipleMatchesInDoc(t *testing.T) {
 	ctx := t.Context()
 	var body string
 	for i := 0; i < 5; i++ {
-		body += fmt.Sprintf("chunk %d is about starflow\n", i)
+		body += fmt.Sprintf("chunk %d is about starkit\n", i)
 	}
 
 	doc := UserDocument{
@@ -267,7 +267,7 @@ func TestStore_LexicalSearch_MultipleMatchesInDoc(t *testing.T) {
 	_, err := store.UpsertDocument(ctx, doc)
 	require.NoError(t, err)
 
-	results, err := store.LexicalSearch(ctx, Query{KeywordQuery: "starflow"})
+	results, err := store.LexicalSearch(ctx, Query{KeywordQuery: "starkit"})
 	require.NoError(t, err)
 
 	assert.Len(t, results, 1)
@@ -729,7 +729,7 @@ func TestStore_LexicalSearchResults(t *testing.T) {
 		Kind:        "kind/b",
 		ContentType: "text/plain",
 		Attributes:  map[string]string{"author": "other"},
-		Body:        "another test document about starflow",
+		Body:        "another test document about starkit",
 		Timestamp:   baseTime.Add(-1 * time.Hour),
 	}
 
@@ -767,7 +767,7 @@ func TestStore_LexicalSearchResults(t *testing.T) {
 
 	t.Run("search with attribute filter", func(t *testing.T) {
 		results, err := store.LexicalSearch(ctx, Query{
-			KeywordQuery: "starflow",
+			KeywordQuery: "starkit",
 			Filters:      map[string]string{"author": "other"},
 			Limit:        10,
 		})

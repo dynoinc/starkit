@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/dynoinc/starflow/workflow"
+	"github.com/dynoinc/starkit/workflow"
 )
 
 func TestAssistantScriptValidation(t *testing.T) {

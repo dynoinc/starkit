@@ -18,10 +18,10 @@ import (
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/responses"
 
-	"github.com/dynoinc/starflow/mcplex"
-	"github.com/dynoinc/starflow/ragstore"
-	"github.com/dynoinc/starflow/workflow"
-	"github.com/dynoinc/starflow/workflow/events"
+	"github.com/dynoinc/starkit/mcplex"
+	"github.com/dynoinc/starkit/ragstore"
+	"github.com/dynoinc/starkit/workflow"
+	"github.com/dynoinc/starkit/workflow/events"
 )
 
 //go:embed assistant.star
@@ -94,7 +94,7 @@ func main() {
 	logger := slog.New(logHandler)
 	slog.SetDefault(logger)
 
-	// Database (ragstore for conversations/memories, PostgreSQL for starflow events)
+	// Database (ragstore for conversations/memories, PostgreSQL for starkit events)
 	databaseURL := os.Getenv("DATABASE_URL")
 	if databaseURL == "" {
 		panic("DATABASE_URL environment variable is required")
@@ -105,7 +105,7 @@ func main() {
 		panic(fmt.Errorf("failed to create workflow store: %w", err))
 	}
 
-	// Starflow
+	// Starkit
 	client := workflow.NewClient[Input, string](wfStore)
 
 	// OpenAI client

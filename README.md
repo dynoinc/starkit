@@ -1,38 +1,33 @@
-# Starflow
+# Starkit
 
-[![Build Status](https://github.com/dynoinc/starflow/actions/workflows/test.yml/badge.svg)](https://github.com/dynoinc/starflow/actions)
-[![Go Reference](https://pkg.go.dev/badge/github.com/dynoinc/starflow.svg)](https://pkg.go.dev/github.com/dynoinc/starflow)
+[![Build Status](https://github.com/dynoinc/starkit/actions/workflows/test.yml/badge.svg)](https://github.com/dynoinc/starkit/actions)
+[![Go Reference](https://pkg.go.dev/badge/github.com/dynoinc/starkit.svg)](https://pkg.go.dev/github.com/dynoinc/starkit)
 
-A workflow engine for Go that enables deterministic and resumable workflow execution using Starlark scripting.
+Go toolkit to help build AI apps all on top of PostgreSQL.
 
 ## Features
 
-### Deterministic & Durable Workflows
-Write workflows in Starlark (Python-like syntax) that are deterministic and can be replayed from any point with full durability guarantees. 
-Every execution step is recorded and can be resumed exactly where it left off.
-
-### Pluggable Storage Backends
-Any store that implements the simple Store interface can be used as a backend. The interface uses append-only operations with optimistic concurrency control. 
-
-## Installation
-
-```bash
-go get github.com/dynoinc/starflow
-```
+* **Deterministic & durable workflows**
+* **RAG store that provides lexical and semantic search over documents**
+* **Helper to integrate multiple MCP servers**
 
 ## Quick Start
 
-For a complete working example, please see the [`example_test.go`](example_test.go) file in this repository. It demonstrates how to:
+Look at [`assistant.star`](cmd/termichat/assistant.star) as an example of AI business logic and how to
+integrate it with in your surfaces like [`terminal`](cmd/termichat/main.go).
 
-- Create an in-memory store
-- Register functions for use in workflows
-- Define workflow scripts using Starlark
-- Execute workflows and retrieve results
+Termichat shows you how to - 
+
+- Setup workflow/ragstore/MCP servers for your app. 
+- How to build a per-user memory system in < 50 lines of code.
+- How to integrate deterministic workflows in an LLM powered app. 
 
 You can run the example with:
 
 ```bash
-go test -run Example
+DATABASE_URL=...
+OPENAI_API_KEY=...
+go run ./cmd/termichat/
 ```
 
 ## License

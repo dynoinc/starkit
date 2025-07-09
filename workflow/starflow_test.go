@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
 
-	"github.com/dynoinc/starflow/workflow"
-	"github.com/dynoinc/starflow/workflow/events"
+	"github.com/dynoinc/starkit/workflow"
+	"github.com/dynoinc/starkit/workflow/events"
 )
 
 func setupTestStore(t *testing.T) *workflow.Store {
@@ -53,7 +53,7 @@ type ComplexResponse struct {
 	Data   map[string]any `json:"data"`
 }
 
-// WorkflowTestSuite provides a clean testing environment for starflow workflows.
+// WorkflowTestSuite provides a clean testing environment for starkit workflows.
 type WorkflowTestSuite struct {
 	suite.Suite
 	store  *workflow.Store

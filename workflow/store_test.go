@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
 
-	"github.com/dynoinc/starflow/workflow"
+	"github.com/dynoinc/starkit/workflow"
 )
 
 // setupTestDB sets up a test database using testcontainers.

@@ -8,9 +8,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/dynoinc/starflow/workflow/events"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
+
+	"github.com/dynoinc/starkit/workflow/events"
 )
 
 //go:embed migrations/*.sql

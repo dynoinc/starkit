@@ -6,7 +6,7 @@ gen:
 
 	go mod tidy
 	go generate ./...
-	goimports -local=github.com/dynoinc/starflow -w .
+	goimports -local=github.com/dynoinc/starkit -w .
 
 lint: gen
 	go vet ./...

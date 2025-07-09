@@ -8,7 +8,7 @@ import (
 
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
 
-	"github.com/dynoinc/starflow/workflow"
+	"github.com/dynoinc/starkit/workflow"
 )
 
 func Example() {

@@ -1,4 +1,4 @@
-// Package starflow provides a workflow engine for Go that enables deterministic
+// Package starkit provides a workflow engine for Go that enables deterministic
 // and resumable workflow execution using Starlark scripting. Every
 // execution step is recorded and can be resumed exactly where it left off.
 //
@@ -9,7 +9,7 @@
 //   - Pluggable Backends: Works with any backend that implements the Store interface
 //   - Resumable Workflows: Workflows can yield and resume based on external signals
 //
-// For more information, see https://github.com/dynoinc/starflow
+// For more information, see https://github.com/dynoinc/starkit
 package workflow
 
 import (
@@ -29,7 +29,7 @@ import (
 
 	"github.com/cenkalti/backoff/v4"
 
-	"github.com/dynoinc/starflow/workflow/events"
+	"github.com/dynoinc/starkit/workflow/events"
 )
 
 type registeredFn struct {

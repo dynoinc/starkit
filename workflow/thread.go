@@ -18,7 +18,7 @@ import (
 	"go.starlark.net/starlark"
 	"go.starlark.net/syntax"
 
-	"github.com/dynoinc/starflow/workflow/events"
+	"github.com/dynoinc/starkit/workflow/events"
 )
 
 type trace struct {

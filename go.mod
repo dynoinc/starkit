@@ -1,4 +1,4 @@
-module github.com/dynoinc/starflow
+module github.com/dynoinc/starkit
 
 go 1.24.4
 
