@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS runs (
+    id TEXT PRIMARY KEY,
+    version INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS events (
+    run_id TEXT NOT NULL REFERENCES runs(id) ON DELETE CASCADE,
+    version INTEGER NOT NULL,
+    data BYTEA NOT NULL,
+    PRIMARY KEY (run_id, version)
+);
+
+CREATE TABLE IF NOT EXISTS scripts (
+    hash TEXT PRIMARY KEY,
+    data BYTEA NOT NULL
+); 
