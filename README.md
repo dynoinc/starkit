@@ -13,8 +13,8 @@ Go toolkit to help build AI apps all on top of PostgreSQL.
 
 ## Quick Start
 
-Look at [`assistant.star`](cmd/termichat/assistant.star) as an example of AI business logic and how to
-integrate it with in your surfaces like [`terminal`](cmd/termichat/main.go).
+Look at [`assistant.star`](demos/termichat/assistant.star) as an example of AI business logic and how to
+integrate it with in your surfaces like [`terminal`](demos/termichat/main.go).
 
 Termichat shows you how to - 
 
@@ -27,7 +27,7 @@ You can run the example with:
 ```bash
 DATABASE_URL=...
 OPENAI_API_KEY=...
-go run ./cmd/termichat/
+go run ./demos/termichat/
 ```
 
 ## License
